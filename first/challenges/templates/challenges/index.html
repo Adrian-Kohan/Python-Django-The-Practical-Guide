@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "challenges/style.css" %}">
+    <link rel="stylesheet" href="{% static "challenges/includes/header.css" %}">
+{% endblock %}
+
+{% block title %}
+    <title>{{month}} challenge</title>
+{% endblock %}
+
+{% block content %}
+{% include "challenges/includes/header.html" %}
+
+<ul>
+    {% for month in months %}
+        <li><h2><a href="{% url "month_challenges" month %}">{{month|title}}</a></h2></li>
+        <!-- url "month_challenges" month == reverse(month_challenges, args=[month]) -->
+    {% endfor %}
+</ul>
+{% endblock %}
+
+ 
