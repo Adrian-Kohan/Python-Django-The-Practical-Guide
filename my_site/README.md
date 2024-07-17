@@ -1,1 +1,1 @@
-![](my_site.gif)
+![my_site](my_site.gif)
